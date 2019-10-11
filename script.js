@@ -60,6 +60,8 @@ var questions = [
 
   var totalSeconds = 75;
 
+  
+
 function selectQuestion(){
     
     for (var i = 0; i < questions.length; i++){
@@ -85,7 +87,14 @@ function playGame(){
 function startTimer(){
     var timerInterval = setInterval(function() {
         totalSeconds--;
-        $("#secondsLeft").html(totalSeconds);}    , 1000);}
+        if(totalSeconds === 0){
+                console.log (true);
+                totalSeconds = 0;
+                clearInterval(timerInterval);
+            }
+        $("#secondsLeft").html(totalSeconds);}    , 1000);
+    }
+
     
 
     
