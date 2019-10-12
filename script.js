@@ -47,14 +47,14 @@ var questions = [
       answer: "Luke Falk"
     },
     {
-      title: "The condition in an if / else statement is enclosed within ____.",
-      choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-      answer: "parentheses"
+      title: "How many years in a row has WSU beat Oregon in football? (As of October 12th 2019",
+      choices: ["1", "2", "3", "4"],
+      answer: "4"
     },
     {
-      title: "The condition in an if / else statement is enclosed within ____.",
-      choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-      answer: "parentheses"
+      title: "What is the WSU single-season record for touchdown passes?",
+      choices: ["33", "36", "37", "38"],
+      answer: "38"
     }
   ]
 
@@ -62,10 +62,11 @@ var questions = [
   var score = 0;
   var i = 0;
 
+
   $("#currentscore").html("Current Score: " + score); 
   
 
-function selectQuestion(i){
+function selectQuestion(){
     
     // for (var i = 0; i < questions.length; i++){
         
@@ -80,10 +81,9 @@ function selectQuestion(i){
 
 $("#begin").on("click", playGame)
 $("#begin").on("click", startTimer)
-$(".answer").on("click", function(){
-//Add to iterator to move to next question  
-console.log(this);  
-checkAnswer(); 
+$(".answer").on("click", function(event){
+//Add to iterator to move to next question    
+checkAnswer(event); 
 i++;   
 selectQuestion();
 
@@ -91,10 +91,11 @@ selectQuestion();
 //select answer function
 
 
-function checkAnswer(questions){
+function checkAnswer(event){
 
-     if (questions[i].choices === answer[i]){
-         score++;
+     if (event.target.textContent === questions[i].answer){
+         score += 5;
+         $("#currentscore").html("Current Score: " + score); 
        
     }
 console.log (score)
