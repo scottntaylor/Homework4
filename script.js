@@ -32,19 +32,19 @@
 
 var questions = [
     {
-      title: "Commonly used data types DO NOT include:",
-      choices: ["strings", "booleans", "alerts", "numbers"],
-      answer: "alerts"
+      title: "What is the record for most wins in a WSU Football Season?",
+      choices: ["9", "11", "12", "10"],
+      answer: "11"
     },
     {
-      title: "The condition in an if / else statement is enclosed within ____.",
-      choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-      answer: "parentheses"
+      title: "What is the name of the WSU Football Stadium",
+      choices: ["Martin Stadium", "Mooberry Field", "Busch Light Stadium", "Butch's Fun House"],
+      answer: "Martin Stadium"
     },
     {
-      title: "The condition in an if / else statement is enclosed within ____.",
-      choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-      answer: "parentheses"
+      title: "Who is the WSU all time leader in passing yards?",
+      choices: ["Gardner Minshew", "Luke Falk", "Connor Halliday", "Drew Bledsoe"],
+      answer: "Luke Falk"
     },
     {
       title: "The condition in an if / else statement is enclosed within ____.",
@@ -61,6 +61,8 @@ var questions = [
   var totalSeconds = 75;
   var score = 0;
   var i = 0;
+
+  $("#currentscore").html("Current Score: " + score); 
   
 
 function selectQuestion(i){
@@ -91,9 +93,10 @@ selectQuestion();
 
 function checkAnswer(questions){
 
-    // if (questions[i].choices === answer){
-    //     score++;
-    // }
+     if (questions[i].choices === answer[i]){
+         score++;
+       
+    }
 console.log (score)
 }
 
