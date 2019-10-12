@@ -59,29 +59,49 @@ var questions = [
   ]
 
   var totalSeconds = 75;
-
+  var score = 0;
+  var i = 0;
   
 
-function selectQuestion(){
+function selectQuestion(i){
     
-    for (var i = 0; i < questions.length; i++){
+    // for (var i = 0; i < questions.length; i++){
         
         $("#question").html(questions[i].title)
         $("#a1").html(questions[i].choices[0])
         $("#a2").html(questions[i].choices[1])
         $("#a3").html(questions[i].choices[2])
         $("#a4").html(questions[i].choices[3])
-    }    
+    // }    
 
 }
 
-$("#begin").on("click", selectQuestion)
+$("#begin").on("click", playGame)
 $("#begin").on("click", startTimer)
- 
+$(".answer").on("click", function(){
+//Add to iterator to move to next question  
+console.log(this);  
+checkAnswer(); 
+i++;   
+selectQuestion();
+
+}) 
+//select answer function
+
+
+function checkAnswer(questions){
+
+    // if (questions[i].choices === answer){
+    //     score++;
+    // }
+console.log (score)
+}
 
 function playGame(){
-   
-    
+  
+   selectQuestion(i);
+
+   console.log(i);
     }
 
 function startTimer(){
