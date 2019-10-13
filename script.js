@@ -99,6 +99,8 @@ function checkAnswer(event){
        
     }
 console.log (score)
+localStorage.setItem('score', score);
+console.log (localStorage);
 }
 
 function playGame(){
@@ -119,8 +121,13 @@ function startTimer(){
         $("#secondsLeft").html(totalSeconds);}    , 1000);
     }
 
-    
 
+function postScore(){
+    if(i === 4){
+        alert("Your score is " + localStorage.score);
+    }
+}    
+postScore();
     
 
 
